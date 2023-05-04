@@ -319,7 +319,7 @@ body {
     padding-right: 49px;
     padding-bottom: 57px;
     color: white;
-    width: 461px;
+    max-width: 461px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #F2EBE3;
     border-radius: 100px 100px 0px 0px;
 }
@@ -338,7 +338,7 @@ body {
 .day-one__list {
     padding: 0;
     margin-bottom: 40px;
-    width: 347px;
+    max-width: 347px;
     list-style: none;
 }
 
@@ -359,14 +359,14 @@ body {
 }
 
 .button--courses {
-    width: 236px;
+    max-width: 236px;
     padding: 15px;
     margin-top: 83px;
 }
 
 .button--courses-two {
     padding: 15px;
-    width: 236px;
+    max-width: 236px;
     margin: 0;
     margin-top: 53px;
 }
@@ -566,7 +566,7 @@ body {
 .reviews__video-4 {
     position: relative;
 }
- .reviews__video-1::after {
+.reviews__video-1::after {
     content: "";
     position: absolute;
     display: inline-block;
@@ -613,6 +613,13 @@ body {
     border: 1px solid #828282;
     z-index: -1;
 }
+.reviews__video-1 img,
+.reviews__video-2 img,
+.reviews__video-3 img,
+.reviews__video-4 img {
+        width: 100%;
+    }
+
 @media (max-width: 1288px) {
     .classes__video::after {
         display: none;
@@ -689,3 +696,43 @@ body {
         justify-content: center;
     }
 } 
+@media (max-width: 600px) {
+    .reviews__video-1::after,
+    .reviews__video-2::after,
+    .reviews__video-3::after,
+    .reviews__video-4::after,
+    .day-one::after, .day-two::after, .hero__image::after, 
+    .advantages__image::after, .author__photo::after {
+        display: none;
+    }
+    .reviews__video-1 img,
+    .reviews__video-2 img,
+    .reviews__video-3 img,
+    .reviews__video-4 img,
+    .advantages__photo {
+        width: 80%;
+        margin-left: 40px;
+    }
+    .hero__text--two,
+    .hero__text-wrapper {
+        margin: 0;
+    }
+    .hero__text-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .icon-date {
+        height: 64px;
+        margin: 0;
+    }
+    .icon-location {
+        margin: 0;
+    }
+    .hero__wrapper { 
+        grid-template-rows: 53px 1fr 604px 35px 1fr 50px;
+    }
+    .photo-gallery__image {
+        width: 80%;
+    }
+
+}
