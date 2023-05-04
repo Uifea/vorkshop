@@ -866,8 +866,6 @@ body {
     .list-marker {
         display: none;
     }
-}
-@media (max-width: 350px) {
     .navigation__list {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -890,7 +888,7 @@ body {
     .hero__wrapper {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 53px 1fr 350px 35px 116px 50px;
+        grid-template-rows: 53px 1fr 4fr 35px 116px 50px;
         grid-template-areas: "text-1"
                              "title"
                              "photo"
@@ -918,6 +916,7 @@ body {
     }
 
 }
+
 .hide {
     display: none;
 }
