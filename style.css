@@ -190,8 +190,8 @@ body {
 }
 .button--hero {
     grid-area: button;
-    width: 324px;
-    padding: 0;
+    max-width: 324px;
+    padding: 5px;
 }
 .hero__title {
     grid-area: title;
@@ -208,6 +208,9 @@ body {
     max-width: 500px;
     position: relative;
     padding-top: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero__photo {
@@ -857,12 +860,63 @@ body {
 
 }
 @media (max-width: 445px) {
-    .hero__photo, .author__photo {
+    .hero__photo, .author__photo-image {
         width: 80%;
     }
     .list-marker {
         display: none;
     }
+}
+@media (max-width: 350px) {
+    .navigation__list {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: ". . logo"
+                            ". . logo"
+    }
+    .social, .button--navigation {
+        display: none;
+    }
+    .hero {
+        padding-bottom: 20px;
+    }
+    .hero__title {
+        line-height: 30px;
+    }
+    .hero__text,
+    .author__info, .day-one__list {
+        font-size: 16px;
+    }
+    .hero__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 53px 1fr 350px 35px 116px 50px;
+        grid-template-areas: "text-1"
+                             "title"
+                             "photo"
+                             "text-2"
+                             "icon"
+                             "button";
+        column-gap: 45px;    
+    }
+    .advantages, .classes, .courses {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .advantages__title, .classes__title,.courses__title, 
+    .promotion__title, .day-one__title, .day-two__title,
+    .author__title, .reviews__title {
+        font-size: 28px;
+        line-height: 30px;
+    }
+    .advantages__item {
+        padding: 0 10px;
+    }
+    .courses__day {
+        padding-left: 38px;
+        padding-right: 20px;
+    }
+
 }
 .hide {
     display: none;
