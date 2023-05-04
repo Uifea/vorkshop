@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Roboto";
     font-style: normal;
@@ -5,7 +6,6 @@
 }
 
 body {
-    margin: 0 auto;
     padding: 0;
     max-width: 1920px;
     font-size: 20px;
@@ -18,7 +18,7 @@ body {
 }
 
 .wrapper {
-    width: 1214px;
+    max-width: 1214px;
     margin: 0 auto;
 }
 
@@ -95,21 +95,36 @@ body {
 }
 
 .hero__wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 275px 1fr 58px 190px 50px;
+    grid-template-areas: "text-1 photo"
+                         "title photo"
+                         "text-2 photo"
+                         "icon photo"
+                         "button photo";
+    column-gap: 45px;    
 }
 
 .hero__info {
     width: 590px;
+    padding: 0;
     padding-top: 245px;
 }
-
+.hero__text--one {
+    grid-area: text-1;
+    align-self: flex-end;
+}
+.hero__text--two {
+    grid-area: text-2;
+}
 .hero__text {
     color: #828282;
     margin-top: 23px;
 }
 
 .hero__text-wrapper {
+    grid-area: icon;
     display: flex;
     margin-top: 23px;
     margin-bottom: 45px;
@@ -127,6 +142,7 @@ body {
     background-image: url("img/icon-date-marker.png");
     background-repeat: no-repeat;
     background-position: 0 -5px;
+    margin-left: 58px;
 }
 
 .hero__text-location {
@@ -140,8 +156,13 @@ body {
     margin-left: 70px;
     padding-top: 10px;
 }
-
+.button--hero {
+    grid-area: button;
+    width: 324px;
+    padding: 0;
+}
 .hero__title {
+    grid-area: title;
     margin: 0;
     font-size: 50px;
     font-weight: 500;
@@ -150,23 +171,27 @@ body {
 }
 
 .hero__image {
+    grid-area: photo;
+    justify-self: end;
     width: 500px;
     position: relative;
     padding-top: 95px;
 }
 
 .hero__photo {
+    position: relative;
     border-radius: 198.5px 198.5px 0 0;
 }
 
-.hero__photo-shadow {
+.hero__image::after{
+    content: "";
     position: absolute;
     display: inline-block;
-    width: 397px;
+    width: 80%;
     height: 592px;
     border: 1px solid #4f4f4f;
     border-radius: 198.5px 198.5px 0 0;
-    left: 33px;
+    left: 23px;
     margin-top: 13px;
     z-index: -1;
 }
@@ -190,6 +215,7 @@ body {
 .advantages__wrapper {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .advantages__image {
@@ -197,16 +223,17 @@ body {
     z-index: 1;
 }
 
-.advantages__photo-shadow {
+.advantages__image::after {
+    content: "";
     position: absolute;
     left: -16px;
     top: -21px;
     display: inline-block;
-    width: 486px;
+    width: 100%;
     height: 442px;
     border: 1px solid #FFFBF2;
     box-sizing: border-box;
-    z-index: -2;
+    z-index: -1;
 }
 
 .advantages__list {
@@ -250,12 +277,13 @@ body {
     text-align: center;
 }
 
-.classes__video-shadow {
+.classes__video::after {
+    content: "";
     position: absolute;
-    left: 75px;
+    left: 23px;
     top: 45px;
     display: inline-block;
-    width: 1128px;
+    width: 100%;
     height: 628px;
     border: 1px solid #333333;
     z-index: -1;
@@ -279,6 +307,7 @@ body {
 .courses__list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .courses__day {
@@ -342,28 +371,30 @@ body {
     margin-top: 53px;
 }
 
-.courses__day-one-shadow {
+.day-one::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    width: 549px;
-    height: 1550px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #715F5B;
     border-radius: 100px 100px 0px 0px;
     z-index: -1;
     top: -20px;
-    left: 50px;
+    left: 23px;
 }
 
-.courses__day-two-shadow {
+.day-two::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    width: 549px;
-    height: 1550px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #715F5B;
     border-radius: 100px 100px 0px 0px;
     z-index: -1;
     top: -20px;
-    left: 50px;
+    left: 23px;
 }
 
 .photo-gallery {
@@ -373,13 +404,16 @@ body {
 }
 
 .photo-gallery__wrapper {
-    width: 1278px;
+    max-width: 1278px;
     margin: 0 auto;
-}
-
-.photo-gallery__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.photo-gallery__image {
+    margin-bottom: 15px;
+    margin-left: 15px;
 }
 
 .promotion {
@@ -387,6 +421,8 @@ body {
     padding-top: 206px;
     padding-bottom: 143px;
     background-image: url("img/promo-image.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
 }
 
@@ -403,7 +439,7 @@ body {
 }
 
 .promotion__wrapper {
-    width: 1214px;
+    max-width: 1214px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -418,11 +454,12 @@ body {
     text-transform: uppercase;
     border-bottom: 1px solid white;
     z-index: 2;
+    line-height: 52px;
+    text-align: center;
 }
 
 .button--promo {
     margin-top: 23px;
-    width: 434px;
     align-self: center;
     cursor: pointer;
     z-index: 2;
@@ -444,6 +481,7 @@ body {
     margin: 0;
     padding-bottom: 23px;
     font-size: 50px;
+    line-height: 52px;
     font-weight: 500;
     text-transform: uppercase;
     text-align: center;
@@ -452,7 +490,7 @@ body {
 .author__wrapper {
     display: flex;
     justify-content: space-between;
-    height: 604px;
+    flex-wrap: wrap;
 }
 
 .author__info {
@@ -471,12 +509,13 @@ body {
     position: relative;
 }
 
-.author__photo-shadow {
+.author__photo::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    left: 33px;
+    left: 23px;
     top: 12px;
-    width: 397px;
+    width: 100%;
     height: 592px;
     border: 1px solid #828282;
     border-radius: 198.5px 198.5px 0px 0px;
@@ -521,11 +560,17 @@ body {
     padding: 15px;
     align-self: center;
 }
-
-.reviews__video-shadow-1 {
+.reviews__video-1,
+.reviews__video-2,
+.reviews__video-3,
+.reviews__video-4 {
+    position: relative;
+}
+ .reviews__video-1::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    left: -18px;
+    left: -23px;
     top: -13px;
     width: 540px;
     height: 284px;
@@ -533,10 +578,11 @@ body {
     z-index: -1;
 }
 
-.reviews__video-shadow-2 {
+.reviews__video-2::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    left: 687px;
+    left: 23px;
     top: -13px;
     width: 540px;
     height: 284px;
@@ -544,24 +590,102 @@ body {
     z-index: -1;
 }
 
-.reviews__video-shadow-3 {
+.reviews__video-3::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    left: -13px;
-    top: 338px;
+    left: -23px;
+    top: 13px;
     width: 540px;
     height: 284px;
     border: 1px solid #828282;
     z-index: -1;
 }
 
-.reviews__video-shadow-4 {
+.reviews__video-4::after {
+    content: "";
     position: absolute;
     display: inline-block;
-    left: 687px;
-    top: 338px;
+    left: 23px;
+    top: 13px;
     width: 540px;
     height: 284px;
     border: 1px solid #828282;
     z-index: -1;
 }
+@media (max-width: 1288px) {
+    .classes__video::after {
+        display: none;
+    }
+    .photo-gallery__wrapper {
+        justify-content: center;
+    }
+}
+@media (max-width: 1240px) {
+    .photo-gallery__wrapper {
+        justify-content: center;
+    }
+    .reviews__video {
+        grid-template-columns: 1fr;
+
+    } 
+    .reviews__wrapper {
+        align-items: center;
+    }
+    .courses__list {
+        justify-content: center;
+    }
+    .day-one {
+        margin-bottom: 50px;
+    }
+    .page-header {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .navigation__list {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .author__wrapper {
+        justify-content: space-evenly;
+    } 
+}
+@media screen and (max-width: 835px) {
+
+    .hero__info {
+        margin-left: 10px;
+        width: 520px;
+        padding-top: 95px;
+    }
+    .hero__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 53px 1fr 604px 35px 116px 50px;
+        grid-template-areas: "text-1"
+                             "title"
+                             "photo"
+                             "text-2"
+                             "icon"
+                             "button";
+        column-gap: 45px;    
+    }
+    .hero__image {
+        justify-self: center;
+        padding-top: 0;
+    }
+    .hero__text--two {
+        text-align: center;
+    }
+    .hero__text-wrapper {
+        justify-content: space-evenly;
+        margin-bottom: 0;
+    }
+    .button--hero {
+        justify-self: center;
+    }
+    
+    .author__wrapper {
+        justify-content: center;
+    }
+} 

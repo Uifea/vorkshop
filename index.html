@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="utf-8">
         <title>Воркшоп</title>
         <link rel="stylesheet" href="style.css">
@@ -11,9 +13,9 @@
                 <nav class="page-header__navigation navigation">
                     <ul class="navigation__list">
                         <li class="navigation__item"><a href="#" class="navigation__link">Кому подходит</a></li>
-                        <li class="navigetion__item"><a href="#" class="navigation__link">Что входит</a></li>
+                        <li class="navigation__item"><a href="#" class="navigation__link">Что входит</a></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Отзывы</a></li>
-                        <li class="navigation__item"><img src="img/Mask Group-logo.png" class="navigation__logo"></li>
+                        <li class="navigation__item navigation__logo"><img src="img/Mask Group-logo.png"></li>
                         <li class="navigation__item"><a href="#" class="navigation__link">Автор воркшопа</a></li>
                         <li class="navigation__item social"><a href="#"><img src="img/icon-fb.png" class="social__icon-fb"></a><a href="#"><img src="img/icon-inst-1.png" class="social__icon-inst"></a></li>
                         <li class="navigation__item button--navigation">Записаться</li>
@@ -24,14 +26,13 @@
         <main>
             <section class="hero">
                 <div class="wrapper hero__wrapper">
-                    <div class="hero__info">
-                        <p class="hero__text">
+                        <p class="hero__text hero__text--one">
                             Для новичков и практикующих стилистов
                         </p>
                         <h1 class="hero__title">
                             Как начать карьеру в мире моды "с нуля"
                         </h1>
-                        <p class="hero__text">
+                        <p class="hero__text hero__text--two">
                             Живой ВОРКШОП Александры Моргун
                         </p>
                         <div class="hero__text-wrapper">
@@ -40,13 +41,11 @@
                             <p class="hero__text icon-date"><span class="hero__text-date">30-31 Октября 2021г</span>
                             </p>
                         </div>
-                        <button class="button">
+                        <button class="button button--hero">
                             Да! Хочу узнать подробности
                         </button>
-                    </div>
                     <div class="hero__image">
-                        <img src="img/hero-image.jpg" class="hero__photo" width="397" height="592">
-                        <span class="hero__photo-shadow"></span>
+                        <img src="img/hero-image.jpg" class="hero__photo">
                     </div>
                 </div>
             </section>
@@ -57,8 +56,7 @@
                     </h2>
                     <div class="advantages__wrapper">
                         <div class="advantages__image">
-                            <img src="img/advantages-image.png" class="advantages__photo">
-                            <span class="advantages__photo-shadow"></span>
+                            <img src="img/advantages-image.png" class="advantages__photo" width="100%">
                         </div>
                         <div class="advantages__list">
                             <div>
@@ -81,8 +79,7 @@
                 <div class="wrapper">
                     <h2 class="classes__title">Как проходят занятия</h2>
                     <div class="classes__video">
-                        <iframe width="1134" height="650" src="https://www.youtube.com/embed/LV0d6kLcDWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <span class="classes__video-shadow"></span>
+                        <iframe width="100%" height="650px"src="https://www.youtube.com/embed/LV0d6kLcDWc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </section>
@@ -117,7 +114,6 @@
                             </ul>
                             <p><b>ПРОДОЛЖИТЕЛЬНОСТЬ 5 часов</b></p>
                             <button class="button button--courses">Да! Оставить заявку</button>
-                            <span class="courses__day-one-shadow"></span>
                         </div>
                         <div class="courses__day day-two">
                             <h3 class="day-two__title">День 2</h3>
@@ -149,25 +145,21 @@
                                 </ul>
                                 <p><b>ПРОДОЛЖИТЕЛЬНОСТЬ 5 часов</b></p>
                             <button class="button button--courses-two">Да! Оставить заявку</button>
-                            <span class="courses__day-two-shadow"></span>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="photo-gallery">
                 <div class="photo-gallery__wrapper">
-                    <div class="photo-gallery__wrapper">
-                        <img src="img/photo-1.png" width="409">
-                        <img src="img/photo-2.png" width="409">
-                        <img src="img/photo-3.png" width="409">
-                    </div>
+                    <img src="img/photo-1.png" class="photo-gallery__image">
+                    <img src="img/photo-2.png" class="photo-gallery__image">
+                    <img src="img/photo-3.png" class="photo-gallery__image">
                 </div>
             </section>
             <section class="promotion">
                 <div class="promotion__wrapper">
                     <h2 class="promotion__title">Заказать два блока по специальной цене</h2>
                     <button class="button button--promo">Да! Хочу получить специальную цену</button>
-                    <span class="promotion__mark">*Осталось 4 места</span>
                 </div>
             </section>
             <section class="author">
@@ -188,8 +180,7 @@
                             Московский Государственный Гуманитарный Университет им. Шолохова: профессиональная переквалификация по специальности: "IMAGE CONSULTING. FASHION STYLING"</p>
                         </div>
                         <div class="author__photo">
-                            <img src="img/author-photo.png" class="author__photo-image">
-                            <span class="author__photo-shadow"></span>
+                            <img src="img/author-photo.png" class="author__photo-image" width="100%">
                         </div>
                     </div>
                 </div>
@@ -199,18 +190,18 @@
                     <h2 class="reviews__title">Отзывы</h2>
                     <div class="reviews__video">
                         <div class="reviews__video-1">
-                            <img src="img/video-1.png">
+                            <img src="img/video-1.png" width="100%">
                             <span class="reviews__video-shadow-1"></span>
                         </div>
                         <div class="reviews__video-2">
-                            <img src="img/video-2.png">
+                            <img src="img/video-2.png" width="100%">
                             <span class="reviews__video-shadow-2"></span>
                         </div>
                         <div class="reviews__video-3">
-                            <img src="img/video-3.png">
+                            <img src="img/video-3.png" width="100%">
                             <span class="reviews__video-shadow-3"></span>
                         </div>
-                        <div class="reviews__video-4">
+                        <div class="reviews__video-4" width="100%">
                             <img src="img/video-4.png">
                             <span class="reviews__video-shadow-4"></span>
                         </div>
